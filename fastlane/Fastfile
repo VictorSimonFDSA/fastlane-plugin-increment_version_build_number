@@ -1,5 +1,5 @@
 lane :test do
-  increment_version_code(
+  increment_version_build_number(
         gradle_file_path: "project/build.gradle",
         #ext_constant_name: "test"
         #app_folder_name:"app"

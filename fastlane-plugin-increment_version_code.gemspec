@@ -5,7 +5,7 @@ require 'fastlane/plugin/increment_version_build_number/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'fastlane-plugin-increment_version_build_number'
-  spec.version       = Fastlane::IncrementVersionCode::VERSION
+  spec.version       = Fastlane::IncrementVersionBuildNumber::VERSION
   spec.author        = %q{Jems}
   spec.email         = %q{victor.simon@fdsa.es}
 
