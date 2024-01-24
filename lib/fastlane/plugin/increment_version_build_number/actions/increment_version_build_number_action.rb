@@ -100,8 +100,8 @@ module Fastlane
                                      optional: true,
                                          type: String,
                                 default_value: nil),
-              FastlaneCore::ConfigItem.new(key: :version_build_number,
-                                      env_name: "IncrementVersionBuildNumber_version_build_number",
+              FastlaneCore::ConfigItem.new(key: :version_build,
+                                      env_name: "IncrementVersionBuildNumber_version_build",
                                    description: "Change to a specific version (optional)",
                                       optional: true,
                                           type: Integer,
@@ -111,7 +111,7 @@ module Fastlane
                                    description: "If the version code is set in an ext constant, specify the constant name (optional)",
                                       optional: true,
                                           type: String,
-                                 default_value: "versionCode")
+                                 default_value: "versionBuild")
           ]
       end
 
