@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fastlane-plugin-increment_version_build_number (0.0.1)
+    fastlane-plugin-increment_version_build_number (0.0.2)
 
 GEM
   remote: https://rubygems.org/
