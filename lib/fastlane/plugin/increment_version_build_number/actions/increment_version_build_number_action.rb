@@ -52,7 +52,11 @@ module Fastlane
                       if line.include? constant_name and foundVersionBuildNumber=="false"
                           UI.message(" -> line: (#{line})!")
                         versionComponents = line.strip.split(' ')
-                        if versionComponents[0] == constant_name
+
+                        # Spected format 
+                        #  0 |     1      |2|3
+                        # def versionBuild = 4
+                        if versionComponents[1] == constant_name 
                           version_build_number = versionComponents[versionComponents.length-1].tr("\"","")
                           if new_version_build_number <= 0
                               new_version_build_number = version_build_number.to_i + 1
