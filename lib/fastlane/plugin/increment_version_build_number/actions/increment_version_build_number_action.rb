@@ -52,13 +52,15 @@ module Fastlane
                       if line.include? constant_name and foundVersionBuildNumber=="false"
                           UI.message(" -> line: (#{line})!")
                         versionComponents = line.strip.split(' ')
-                        version_build_number = versionComponents[versionComponents.length-1].tr("\"","")
-                        if new_version_build_number <= 0
-                            new_version_build_number = version_build_number.to_i + 1
-                        end
-                        if !!(version_build_number =~ /\A[-+]?[0-9]+\z/)
-                            line.replace line.sub(version_build_number, new_version_build_number.to_s)
-                            foundVersionBuildNumber = "true"
+                        if versionComponents[0] == constant_name
+                          version_build_number = versionComponents[versionComponents.length-1].tr("\"","")
+                          if new_version_build_number <= 0
+                              new_version_build_number = version_build_number.to_i + 1
+                          end
+                          if !!(version_build_number =~ /\A[-+]?[0-9]+\z/)
+                              line.replace line.sub(version_build_number, new_version_build_number.to_s)
+                              foundVersionBuildNumber = "true"
+                          end
                         end
                         temp_file.puts line
                       else
